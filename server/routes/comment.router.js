@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 
 router.put('/', (req, res) => {
   Comments.findByIdAndUpdate(req.body._id, req.body)
-    .then(() => {
+    .then(() => { 
       console.log(`udated object with id ${req.body._id} to ${req.body}`);
       res.sendStatus(200);
     })
@@ -38,7 +38,7 @@ router.put('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-  Comments.findByIdAndRemove(req.body._id)
+  Comments.findByIdAndRemove(req.query._id)
     .then(() => {
       console.log(`deleted object with id ${req.body._id}`);
       res.sendStatus(200);

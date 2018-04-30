@@ -38,7 +38,7 @@ router.put('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-  Post.findByIdAndRemove(req.body._id)
+  Post.findByIdAndRemove(req.query._id)
     .then(() => {
       console.log(`deleted object with id ${req.body._id}`);
       res.sendStatus(200);
