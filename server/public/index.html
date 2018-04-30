@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NPC-Lives</title>
+  <script src="vendors/angular.min.js"></script>
+  <script src="scripts/client.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="NPCLivesApp">
+  <div ng-controller="NPCLivesController as vm" class="container">
+    <div class="row">
+      <h1>{{vm.pageTitle}}</h1>
+    </div>
+    <div class="row">
+      <h2>Add Post:</h2>
+      <form>
+        <label>Name: <input type="text" ng-model="vm.newPost.poster" placeholder="Villager #4" /></label>
+        <label>Post: <input type="text" width="100px" ng-model="vm.newPost.post" placeholder="Adventurer rummaged through my pots looking for money" /></label>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
