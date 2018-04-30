@@ -10,10 +10,10 @@ app.controller('NPCLivesController', ['$http', function($http) {
   self.pageTitle = 'Welcome to your NPC Life!';
   self.newPost = {};
   self.posts = [];
-  self.comments = {};
   self.newComment = {};
 
   // Gets the posts from the server
+  // Populates a few extra fields
   self.getPosts = function () {
     $http({
       method: 'GET',
@@ -22,6 +22,11 @@ app.controller('NPCLivesController', ['$http', function($http) {
       .then(function(response) {
         console.log(response.data);
         self.posts = response.data;
+        self.posts.forEach(function (post) {
+          post.showComments = false;
+          post.showAddComment = false;
+          post.comments = [];
+        });
         self.getComments();
       })
       .catch(function(error) {
@@ -62,14 +67,16 @@ app.controller('NPCLivesController', ['$http', function($http) {
   }
 
   // Gets all comments from the server
+  // populates comments into individual posts
   self.getComments = function () {
     $http({
       method: 'GET',
       url: '/comment',
     })
       .then(function (response) {
-        self.comments = response.data;
-        console.log(self.comments[self.posts[0]._id])
+        self.posts.forEach(post => {
+          post.comments = response.data[post._id];
+        });
       })
       .catch(function(error) {
         console.log(error);
@@ -93,7 +100,35 @@ app.controller('NPCLivesController', ['$http', function($http) {
       })
   }
 
+  // Removes comment from database
+  self.deleteComment = function(comment) {
+    $http({
+      method: 'DELETE',
+      url: '/comment',
+      params: comment
+    })
+      .then(function(response) {
+        console.log(response);
+        self.getComments();
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  // Allows toggling of displaying the Add Comment field
+  self.displayAddComment = function(postToDisplay, show) {
+    self.posts.forEach(function (post) {
+      post.showAddComment = false;
+    })
+    if (show) {
+      postToDisplay.showAddComment = true;
+    }
+  }
+
   self.init = function () {
     self.getPosts();
   }
+
+  self.init();
 }])
