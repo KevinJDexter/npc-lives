@@ -94,6 +94,7 @@ app.controller('NPCLivesController', ['$http', function($http) {
       .then(function(response) {
         console.log(response);
         self.getComments();
+        self.clearCommentInputs();
       })
       .catch(function(error) {
         console.log(error);
@@ -116,6 +117,10 @@ app.controller('NPCLivesController', ['$http', function($http) {
       })
   }
 
+  self.clearCommentInputs = function () {
+    self.newComment = {};
+  }
+
   // Allows toggling of displaying the Add Comment field
   self.displayAddComment = function(postToDisplay, show) {
     self.posts.forEach(function (post) {
@@ -124,6 +129,7 @@ app.controller('NPCLivesController', ['$http', function($http) {
     if (show) {
       postToDisplay.showAddComment = true;
     }
+    self.clearCommentInputs();
   }
 
   self.init = function () {
