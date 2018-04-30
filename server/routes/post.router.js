@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const Post = require('../models/post.schema');
 
+// Gets all Posts in database and sends to client
 router.get('/', (req, res) => {
   Post.find({})
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       res.send(response);
     })
     .catch((error) => {
@@ -13,10 +14,11 @@ router.get('/', (req, res) => {
     })
 })
 
+// Adds new Post to the database
 router.post('/', (req, res) => {
   Post.create(req.body)
     .then(() => {
-      console.log(`Posted to 'posts': ${req.body}`);
+      // console.log(`Posted to 'posts': ${req.body}`);
       res.sendStatus(202);
     })
     .catch((error) => {
@@ -25,10 +27,11 @@ router.post('/', (req, res) => {
     })
 })
 
+// Updates existing post in database
 router.put('/', (req, res) => {
   Post.findByIdAndUpdate(req.body._id, req.body)
     .then(() => {
-      console.log(`updated object with id ${req.body._id} to ${req.body}`);
+      // console.log(`updated object with id ${req.body._id} to ${req.body}`);
       res.sendStatus(200);
     })
     .catch((error) => {
@@ -37,10 +40,11 @@ router.put('/', (req, res) => {
     })
 })
 
+// Deletes existing post in database
 router.delete('/', (req, res) => {
   Post.findByIdAndRemove(req.query._id)
     .then(() => {
-      console.log(`deleted object with id ${req.body._id}`);
+      // console.log(`deleted object with id ${req.body._id}`);
       res.sendStatus(200);
     })
     .catch((error) => {
