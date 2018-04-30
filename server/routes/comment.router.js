@@ -13,4 +13,40 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  Comments.create(req.body)
+    .then(() => {
+      console.log(`added ${req.body} to database`);
+      res.sendStatus(202);
+    })
+    .catch((error) => {
+      console.log(`error in /comments POST: ${error}`);
+      res.sendStatus(500);
+    })
+})
+
+router.put('/', (req, res) => {
+  Comments.findByIdAndUpdate(req.body._id, req.body)
+    .then(() => {
+      console.log(`udated object with id ${req.body._id} to ${req.body}`);
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`error in /comments PUT: ${error}`);
+      res.sendStatus(500);
+    })
+})
+
+router.delete('/', (req, res) => {
+  Comments.findByIdAndRemove(req.body._id)
+    .then(() => {
+      console.log(`deleted object with id ${req.body._id}`);
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`error in /comments DELETE: ${error}`);
+      res.sendStatus(500);
+    })
+})
+
 module.exports = router;
