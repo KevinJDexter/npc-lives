@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-databaseUrl = 'mongodb://localhost:27017/npc_lives'
+databaseUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/npc_lives';
 
 mongoose.connect(databaseUrl);
 
