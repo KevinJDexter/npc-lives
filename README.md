@@ -7,6 +7,7 @@
 [ ] Move controller to main.controller.js file in folder server/public/scripts/controllers
 [ ] -- Rename controller to MainController
 [ ] Improve appearance of site using Bootstrap
+[ ] ADD ABOUT PAGE!!!!
 
 
 
