@@ -1,0 +1,35 @@
+* {
+  margin: 0px;
+}
+
+.navigation {
+  list-style: none;
+  text-align: center;
+  background-color: turquoise;
+  padding: 10px;
+}
+
+.navigation li {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+  /* border: 1px solid black; */
+  background-color: white;
+}
+
+.navigation li a {
+  color: black;
+}
+
+header {
+  background-color: teal;
+}
+
+h1 {
+  margin: 0px;
+  padding: 15px;
+}
+
+header {
+
+}

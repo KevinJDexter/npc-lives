@@ -16,10 +16,12 @@
 </head>
 
 <body ng-app="NPCLivesApp">
-  <div class='container'>
-    <h1 class="col">Welcome to your NPC Life!</h1>
-    <ng-include src="'views/navigation.html'"></ng-include>
-  </div>
+  <!-- <div class='container'> -->
+  <header>
+    <h1 class="text-center">Welcome to your NPC Life!</h1>
+  </header>
+  <ng-include src="'views/navigation.html'"></ng-include>
+  <!-- </div> -->
   <main ng-view></main>
 </body>
 
