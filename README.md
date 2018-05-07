@@ -6,6 +6,7 @@
 [X] Move html to main.html file in folder server/public/views
 [X] Move controller to main.controller.js file in folder server/public/scripts/controllers
 [X] -- Rename controller to MainController
+[X] Used cards to display posts
 [ ] Improve appearance of site using Bootstrap
 [X] ADD ABOUT PAGE!!!!
 
