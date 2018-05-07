@@ -8,6 +8,9 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainController as vm'
     })
+    .when('/about', {
+      templateUrl: 'views/about.html'
+    })
     .otherwise({
       template: '<h2>404</h2>'
     })
