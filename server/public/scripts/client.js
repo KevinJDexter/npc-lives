@@ -8,6 +8,10 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainController as vm'
     })
+    .when('/view', {
+      templateUrl: 'views/view.html',
+      controller: 'ViewController as vm'
+    })
     .when('/about', {
       templateUrl: 'views/about.html'
     })
