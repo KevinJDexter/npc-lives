@@ -1,15 +1,15 @@
-app.controller('AdminController', ['AdminService', function(AdminService) {
+app.controller('AdminController', ['PostService', function(PostService) {
   console.log('Admin Controller loaded');
 
   var self = this;
 
-  self.posts = AdminService.posts;
+  self.posts = PostService.posts;
 
-  self.getPosts = AdminService.getPosts;
-  self.getComments = AdminService.getComments;
+  self.getPosts = PostService.getPosts;
+  self.getComments = PostService.getComments;
 
-  self.deletePost = AdminService.deletePost;
-  self.deleteComment = AdminService.deleteComment;
+  self.deletePost = PostService.deletePost;
+  self.deleteComment = PostService.deleteComment;
 
   self.getPosts();
 }])

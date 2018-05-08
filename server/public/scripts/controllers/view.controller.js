@@ -1,16 +1,16 @@
-app.controller('ViewController', ['ViewService', function(ViewService) {
+app.controller('ViewController', ['PostService', function(PostService) {
   console.log('View Controller loaded');
 
   var self = this;
   
-  self.posts = ViewService.posts;
-  self.newComment = ViewService.newComment;
+  self.posts = PostService.posts;
+  self.newComment = PostService.newComment;
 
-  self.displayAddComment = ViewService.displayAddComment;
-  self.addComment = ViewService.addComment;
+  self.displayAddComment = PostService.displayAddComment;
+  self.addComment = PostService.addComment;
   
-  self.getPosts = ViewService.getPosts;
-  self.getComments = ViewService.getComments;
+  self.getPosts = PostService.getPosts;
+  self.getComments = PostService.getComments;
 
   self.getPosts();
 }])
