@@ -12,9 +12,9 @@
 
 
 TODO
-[ ] Remove Delete boxes from view
+[X] Remove Delete boxes from view
 [ ] Create admin page for delete boxes
-[ ] Create view for posting (with example card to side)
+[X] Create view for posting (with example card to side)
 [X] Create view for viewing
 [ ] Decide on colors for app
 [ ] Style navbar to look better
@@ -26,3 +26,4 @@ TODO
 
 Future additions:
 [ ] Favorite posts
+[ ] Random events occur
