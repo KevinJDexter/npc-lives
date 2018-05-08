@@ -1,3 +1,4 @@
+<div class="container">
 <div class="card-columns">
   <div ng-repeat="post in vm.posts.list">
     <div class="card text-center border-dark">
@@ -19,11 +20,10 @@
         <div class="card text-center">
           <p class="card-text">{{comment.comment}}</p>
           <p class="card-text">-- {{comment.commentor}}
-            <button ng-click="vm.deleteComment(comment)">X</button>
           </p>
         </div>
       </div>
-      <button style="float: right" class="btn-danger" ng-click="vm.deletePost(post)">X</button>
     </div>
   </div>
+</div>
 </div>
