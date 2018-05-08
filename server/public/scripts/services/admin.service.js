@@ -14,7 +14,6 @@ app.service('AdminService', ['$http', function ($http) {
       url: '/post'
     })
       .then(function (response) {
-        console.log(response.data);
         self.posts.list = response.data;
         self.posts.list.forEach(function (post) {
           post.showComments = false;
@@ -46,10 +45,32 @@ app.service('AdminService', ['$http', function ($http) {
   }
 
   self.deletePost = function(post) {
-    console.log('DELETE POST', post);
+    $http({
+      method: 'DELETE', 
+      url: '/post',
+      params: post
+    })
+      .then(function(response) {
+        console.log(response);
+        self.getPosts();
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
   };
 
   self.deleteComment = function(comment) {
-    console.log('DELETE COMMENT', comment);
+    $http({
+      method:'DELETE',
+      url: '/comment',
+      params: comment
+    })
+      .then(function(response) {
+        console.log(response);
+        self.getPosts();
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
   };
 }])
