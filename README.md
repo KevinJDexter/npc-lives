@@ -21,6 +21,8 @@ TODO
 [ ] Style body
 [ ] Search functionality
 [ ] Random post option
+[ ] Condense services down (post, view, and admin all use the same)
+
 
 
 
