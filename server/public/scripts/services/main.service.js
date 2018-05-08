@@ -9,7 +9,9 @@ app.service('MainService', ['$http', function ($http) {
   self.events = {list: []};
 
   self.getEvent = function () {
-    self.events.list.push("The castle was attacked by the white dragon Vorugal");
-    self.events.list.push("The Autumn Festival begins tomorrow");
+    let newList = [];
+    newList.push("The castle was attacked by the white dragon Vorugal");
+    newList.push("The Autumn Festival begins tomorrow");
+    self.events.list = newList;
   }
 }])
