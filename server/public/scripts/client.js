@@ -12,6 +12,10 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/view.html',
       controller: 'ViewController as vm'
     })
+    .when('/post', {
+      templateUrl: 'views/post.html',
+      controller: 'PostController as vm'
+    })
     .when('/about', {
       templateUrl: 'views/about.html'
     })

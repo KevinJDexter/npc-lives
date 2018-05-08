@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form ng-submit="">
+        <div class="form-group">
+          <label>Name:</label>
+          <input class="form-control" type="text" ng-model="vm.newPost.poster" placeholder="Blacksmith" />
+        </div>
+        <div class="form-group">
+          <label>Post:</label>
+          <textarea class="form-control" type="text" width="100px" ng-model="vm.newPost.post" 
+          placeholder="Some guy came in asking for a 'broadsword plus one.' Why not just say two broadswords?">
+
+          </textarea>
+        </div>
+        <div class="form-group">
+        <label>Where:</label>
+            <input class="form-control" type="text" ng-model="vm.newPost.location" placeholder="Smithery" />
+        </div>
+        <button class="btn btn-primary" ng-click="vm.postExperience()">Post</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title">Smithery</h3>
+          <p class="card-text">Some guy came in asking for a 'broadsword plus one.' Why not just say two broadswords?</p>
+          <p class="card-text">-- Blacksmith</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{vm}}
+</div>

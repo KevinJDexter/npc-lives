@@ -15,7 +15,7 @@ TODO
 [ ] Remove Delete boxes from view
 [ ] Create admin page for delete boxes
 [ ] Create view for posting (with example card to side)
-[ ] Create view for viewing
+[X] Create view for viewing
 [ ] Decide on colors for app
 [ ] Style navbar to look better
 [ ] Style body
