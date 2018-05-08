@@ -8,21 +8,16 @@
           <p class="card-text text-right"> -- {{post.poster}}</p>
         </div>
         <div>
-          <label>Add comment:
-            <button ng-click="vm.displayAddComment(post, true)" ng-if="!post.showAddComment">Comment</button>
-            <input type="text" ng-model="vm.newComment.commentor" ng-if="post.showAddComment" placeholder="Villager #2" />
-            <input class="col-md-12" type="text" ng-model="vm.newComment.comment" ng-if="post.showAddComment" placeholder="I had the same experience last week!">
-            <button ng-click="vm.addComment(post)" ng-if="post.showAddComment">Comment</button>
-            <button ng-click="vm.displayAddComment(post, false)" ng-show="post.showAddComment">Cancel</button>
-          </label>
         </div>
         <div ng-repeat="comment in post.comments">
           <div class="card text-center">
             <p class="card-text">{{comment.comment}}</p>
             <p class="card-text">-- {{comment.commentor}}
+              <button ng-click="vm.deleteComment(comment)">X</button>
             </p>
           </div>
         </div>
+        <button style="float: right" class="btn btn-danger" ng-click="vm.deletePost(post)">X</button>
       </div>
     </div>
   </div>

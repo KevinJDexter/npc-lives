@@ -19,6 +19,10 @@ app.config(function ($routeProvider) {
     .when('/about', {
       templateUrl: 'views/about.html'
     })
+    .when('/manincharge', {
+      templateUrl: 'views/admin.html',
+      controller: 'AdminController as vm'
+    })
     .otherwise({
       template: '<h2>404</h2>'
     })
